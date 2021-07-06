@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="14ed5c90-a476-4a65-b323-8c3dc1a93261">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-04T17:32:59.320-08:00"
+        cq:lastModifiedBy="admin"
+        cq:name="we-retail-store-san-jose"
+        cq:parentPath="/content/dam/we-retail/en/stores"
+        dam:relativePath="we-retail-stores/en/we-retail-store-san-jose"
+        jcr:description="We Retail Store San Jose"
+        jcr:lastModified="{Date}2018-01-05T11:21:35.734-08:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="We Retail Store San Jose"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2018-01-05T11:21:35.734-08:00">
+        <associated
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sling/collection">
+            <sling:members jcr:primaryType="nt:unstructured"/>
+        </associated>
+        <data
+            cq:model="/conf/we-retail/settings/dam/cfm/models/we-retail-store-info"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:primaryType="nt:unstructured"
+                address="&lt;p>&lt;a href=&quot;https://www.google.com/maps/place/Adobe+-+San+Jose/@37.3306844,-121.8961534,17z/data=!3m1!4b1!4m5!3m4!1s0x808fcca5a9f26c8f:0xe512de624b81de4f!8m2!3d37.3306844!4d-121.8939647&quot;>345 Park Ave, San Jose, CA 95110345 Park Ave, San Jose, CA 95110&lt;/a>&lt;br>&#xa;&lt;/p>&#xa;"
+                address_x0040_ContentType="text/html"
+                dateopened="{Date}2017-10-09T11:24:00.000-07:00"
+                description="San Jose is a large city surrounded by rolling hills in Silicon Valley, a major technology hub in California's Bay Area. Architectural landmarks, from the 1883 Italianate-style Oddfellows building to Spanish Colonial Revival structures, make up the downtown historic district. The downtown area is also home to the Tech Museum of Innovation, devoted to the exploration of science and technology."
+                events="&lt;ul style=&quot;list-style-position: inside;&quot;>&#xa;&lt;li>Summer 2017 Biking Challenge 25k&lt;/li>&#xa;&lt;li>10k Marathon organized by WeRetail&amp;nbsp;for Green Environment Initiative&lt;/li>&#xa;&lt;li>Mission Peak Hike Challenge&lt;/li>&#xa;&lt;/ul>&#xa;"
+                events_x0040_ContentType="text/html"
+                gift-cards="{Boolean}false"
+                openinghours="&lt;table>&#xa;&lt;tbody>&lt;tr>&lt;td>Monday&lt;/td>&#xa;&lt;td>8AM–5PM&lt;/td>&#xa;&lt;/tr>&lt;tr>&lt;td>Tuesday&lt;/td>&#xa;&lt;td>8AM–5PM&lt;/td>&#xa;&lt;/tr>&lt;tr>&lt;td>Wednesday&lt;/td>&#xa;&lt;td>8AM–5PM&lt;/td>&#xa;&lt;/tr>&lt;tr>&lt;td>Thursday&lt;/td>&#xa;&lt;td>8AM–5PM&lt;/td>&#xa;&lt;/tr>&lt;tr>&lt;td>Friday&lt;/td>&#xa;&lt;td>8AM–5PM&lt;/td>&#xa;&lt;/tr>&lt;tr>&lt;td>Saturday&lt;/td>&#xa;&lt;td>Closed&lt;/td>&#xa;&lt;/tr>&lt;tr>&lt;td>Sunday&lt;/td>&#xa;&lt;td>Closed&lt;/td>&#xa;&lt;/tr>&lt;/tbody>&lt;/table>&#xa;"
+                openinghours_x0040_ContentType="text/html"
+                reference="[/content/dam/we-retail/en/activities/hiking/hiking_4.jpg]"
+                storelocation="WeRetail San Jose"
+                tags="[we-retail:activity/biking,we-retail:activity/hiking]"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+        <usages
+            dam:score="{Long}1"
+            jcr:primaryType="nt:unstructured"
+            usedBy="[aem]">
+            <aem
+                jcr:primaryType="nt:unstructured"
+                count="{Long}1"
+                lastUsed="{Date}2018-02-06T09:50:16.756-08:00"/>
+        </usages>
+    </jcr:content>
+</jcr:root>

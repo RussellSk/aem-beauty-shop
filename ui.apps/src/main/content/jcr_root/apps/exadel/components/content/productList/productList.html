@@ -1,0 +1,19 @@
+<div data-sly-use.productList="com.exadel.core.models.ProductListModel" class="my-5">
+    <div data-sly-list.item="${productList.products}" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+            <div class="card shadow">
+                <img src="${item.image}" class="img mx-auto" width="220" />
+                <div class="card-body">
+                    <a href="${item.pagePath}">
+                        <h5 class="text-primary">${item.truncatedName}</h5>
+                    </a>
+                    <p class="card-text">${item.truncatedDescription}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div data-sly-resource="${'likes' @ resourceType='exadel/components/content/likes'}"> </div>
+                        <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<sly data-sly-resource="${@path='topbar', resourceType='exadel/components/global/topbar'}"></sly>
+<main>
+    <sly data-sly-resource="${@path='topsection', resourceType='exadel/components/global/topsection'}"></sly>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <sly data-sly-resource="${@path='title', resourceType='exadel/components/title'}"></sly>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        Description:
+                        <sly data-sly-resource="${@path='root/container/description', resourceType='exadel/components/description'}"></sly>
+                    </div>
+                </div>
+            </div>
+            <sly data-sly-resource="${@path='parsys', resourceType='wcm/foundation/components/parsys'}"></sly>
+        </div>
+    </div>
+</main>
+<sly data-sly-resource="${@path='footer', resourceType='exadel/components/global/footer'}"></sly>

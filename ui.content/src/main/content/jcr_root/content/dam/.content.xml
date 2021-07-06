@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="sling:Folder">
+    <dam:batch
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="asset/batch"/>
+    <jcr:content
+        cq:allowedTemplates="[/libs/dam/templates/assetshare,/libs/dam/templates/asseteditor]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Assets"/>
+    <assetinsights jcr:primaryType="nt:unstructured">
+        <embedcode
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="dam/components/assetinsights/embedcode"/>
+        <pagetracker
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="dam/components/assetinsights/pagetracker"/>
+    </assetinsights>
+    <collections
+        jcr:mixinTypes="[rep:AccessControllable]"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="dam/collection"
+        updated="{Boolean}true">
+        <public
+            jcr:mixinTypes="[rep:AccessControllable]"
+            jcr:primaryType="nt:unstructured">
+            <rep:policy/>
+        </public>
+        <rep:policy/>
+        <K jcr:primaryType="nt:unstructured">
+            <KdD_XECbF42hg55jYyiZ jcr:primaryType="nt:unstructured">
+                <lightbox
+                    jcr:created="{Date}2021-06-29T01:38:06.394+05:00"
+                    jcr:createdBy="admin"
+                    jcr:description=""
+                    jcr:lastModified="{Date}2021-06-29T01:38:06.487+05:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:mixinTypes="[mix:referenceable,rep:AccessControllable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Lightbox"
+                    jcr:uuid="e472349a-7623-4d50-ab7c-a79d14f6f690"
+                    sling:resourceSuperType="sling/collection"
+                    sling:resourceType="dam/collection">
+                    <sling:members jcr:primaryType="nt:unstructured"/>
+                    <rep:policy/>
+                </lightbox>
+            </KdD_XECbF42hg55jYyiZ>
+        </K>
+    </collections>
+</jcr:root>

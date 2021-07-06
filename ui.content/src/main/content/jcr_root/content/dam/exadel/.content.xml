@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        cq:conf="/conf/exadel"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Beauty Shop">
+        <folderThumbnail/>
+    </jcr:content>
+    <asset.jpg/>
+    <organic-cosmetics_icon-icons.com_49218.png/>
+    <organic-skin-care_icon-icons.com_49215.png/>
+    <_x0036_ee3c9205867136e4b9f90b082e82677.jpg/>
+</jcr:root>

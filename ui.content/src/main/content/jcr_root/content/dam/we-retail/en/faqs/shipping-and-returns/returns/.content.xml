@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="09f5e26a-600f-41b4-afc0-c1d8aa58db62">
+    <jcr:content
+        cq:name="returns"
+        cq:parentPath="/content/dam/we-retail/en/faqs/shipping-and-returns"
+        jcr:lastModified="{Date}2019-01-21T11:10:13.894+01:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Returns"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2019-01-21T11:10:13.894+01:00">
+        <associated
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sling/collection">
+            <sling:members jcr:primaryType="nt:unstructured"/>
+        </associated>
+        <data
+            cq:model="/conf/we-retail/settings/dam/cfm/models/faq"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:primaryType="nt:unstructured"
+                answer="&lt;p>Items can be returned within 30 calendar days of purchase.&lt;/p>&#xa;&lt;p>To initiate a return, log in to your account on the Web site and select &lt;b>My Account &amp;gt; Past Orders&lt;/b>.&lt;/p>&#xa;"
+                answer_x0040_ContentType="text/html"
+                question="How do I make a return?"
+                tags="[we-retail:shipping]"/>
+        </data>
+        <metadata
+            cq:tags="[we-retail:commonly-asked-question]"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

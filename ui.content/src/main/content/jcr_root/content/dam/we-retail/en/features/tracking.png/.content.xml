@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="cd4ac8b0-54b9-4092-a649-fb5324ec2616">
+    <jcr:content
+        dam:assetState="processed"
+        dam:relativePath="we-retail/en/features/tracking.png"
+        jcr:lastModified="{Date}2016-06-06T13:56:05.622+03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:Comments="XML:com.adobe.xmp: &lt;x:xmpmeta xmlns:x=&quot;adobe:ns:meta/&quot; x:xmptk=&quot;XMP Core 5.4.0&quot;>&#xa;   &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;>&#xa;      &lt;rdf:Description rdf:about=&quot;&quot;&#xa;            xmlns:exif=&quot;http://ns.adobe.com/exif/1.0/&quot;&#xa;            xmlns:tiff=&quot;http://ns.adobe.com/tiff/1.0/&quot;>&#xa;         &lt;exif:PixelYDimension>83&lt;/exif:PixelYDimension>&#xa;         &lt;exif:PixelXDimension>94&lt;/exif:PixelXDimension>&#xa;         &lt;tiff:Orientation>1&lt;/tiff:Orientation>&#xa;      &lt;/rdf:Description>&#xa;   &lt;/rdf:RDF>&#xa;&lt;/x:xmpmeta>&#xa;&#xa;"
+            dam:extracted="{Date}2016-06-06T13:56:05.297+03:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}1"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="1948c9b551aeffc043fe668f0665f323c97933f5"
+            dam:size="{Long}2551"
+            dc:format="image/png"
+            exif:PixelXDimension="{Long}94"
+            exif:PixelYDimension="{Long}83"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}36"
+            tiff:ImageWidth="{Long}36"
+            tiff:Orientation="{Long}1"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,13 @@
+<section data-sly-use.banner="com.exadel.core.models.BannerModel"
+         class="topsection">
+    <div class="row py-lg-5 px-5">
+        <div class="col-lg-6 col-md-8">
+            <h1 class="topsection-container-title">${banner.name}</h1>
+            <p class=" text-muted">${banner.description}</p>
+            <p>
+                <a href="${banner.primaryUrl}" class="btn btn-primary my-2">Main call to action</a>
+                <a href="${banner.secondaryUrl}" class="btn btn-secondary my-2">Secondary action</a>
+            </p>
+        </div>
+    </div>
+</section>

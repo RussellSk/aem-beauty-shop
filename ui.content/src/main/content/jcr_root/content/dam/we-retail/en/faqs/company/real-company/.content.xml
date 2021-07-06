@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="5386b71a-1729-4354-a2cd-5bcfba4b3a59">
+    <jcr:content
+        cq:name="real-company"
+        cq:parentPath="/content/dam/we-retail/en/faqs/company"
+        jcr:description=""
+        jcr:lastModified="{Date}2018-01-05T11:19:31.237-08:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Real Company"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2018-01-05T11:19:31.237-08:00">
+        <associated
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sling/collection">
+            <sling:members jcr:primaryType="nt:unstructured"/>
+        </associated>
+        <data
+            cq:model="/conf/we-retail/settings/dam/cfm/models/faq"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:primaryType="nt:unstructured"
+                answer="&lt;p>No, We.Retail is not a real company. We.Retail is a fake company we use to build reference materials for Adobe Experience Manager.&lt;br>&#xa;&lt;/p>&#xa;"
+                answer_x0040_ContentType="text/html"
+                question="Are you a real company?"
+                tags="[we-retail:company]"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

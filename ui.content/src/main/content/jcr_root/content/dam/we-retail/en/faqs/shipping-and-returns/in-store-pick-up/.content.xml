@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="77a454a2-b829-4fdf-bc29-a04caf3b4323">
+    <jcr:content
+        cq:name="in-store-pick-up"
+        cq:parentPath="/content/dam/we-retail/en/faqs/shipping-and-returns"
+        jcr:lastModified="{Date}2019-01-21T11:09:25.933+01:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="In-Store Pick-up"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2019-01-21T11:09:25.934+01:00">
+        <associated
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sling/collection">
+            <sling:members jcr:primaryType="nt:unstructured"/>
+        </associated>
+        <data
+            cq:model="/conf/we-retail/settings/dam/cfm/models/faq"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:primaryType="nt:unstructured"
+                answer="&lt;p>At this time we do not have any phsyical store locations, so all orders must be placed through our Web site.&lt;/p>&#xa;&lt;p>Please sign up for our newsletter to receive updates on store openings!&lt;/p>&#xa;"
+                answer_x0040_ContentType="text/html"
+                question="Do you have store pick-up?"
+                tags="[we-retail:shipping]"/>
+        </data>
+        <metadata
+            cq:tags="[we-retail:commonly-asked-question]"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

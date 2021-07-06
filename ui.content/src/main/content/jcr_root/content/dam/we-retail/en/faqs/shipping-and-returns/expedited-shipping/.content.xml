@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="459ea3b7-4400-4970-9def-421fc3c48eba">
+    <jcr:content
+        cq:name="expedited-shipping"
+        cq:parentPath="/content/dam/we-retail/en/faqs/shipping-and-returns"
+        jcr:description=""
+        jcr:lastModified="{Date}2018-01-05T11:18:38.219-08:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Expedited Shipping"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2018-01-05T11:18:38.219-08:00">
+        <associated
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sling/collection">
+            <sling:members jcr:primaryType="nt:unstructured"/>
+        </associated>
+        <data
+            cq:model="/conf/we-retail/settings/dam/cfm/models/faq"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:primaryType="nt:unstructured"
+                answer="&lt;p>No, we have a single shipping option, 3 day express shipping. Our 3 day shipping applies, free of charge, to all orders regardless of purchase size.&lt;br>&#xa;&lt;/p>&#xa;"
+                answer_x0040_ContentType="text/html"
+                question="Can I request expedite shipping?"
+                tags="[we-retail:shipping]"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

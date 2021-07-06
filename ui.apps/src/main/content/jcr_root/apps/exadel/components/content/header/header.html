@@ -1,0 +1,33 @@
+<header data-sly-use.header="com.exadel.core.models.HeaderModel">
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-light">${header.description}</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Skype: russell.skalden</a></li>
+            <li><a href="https://www.linkedin.com/in/ruslan-skaldin-8a092773/"
+                   class="text-white">LinkedIn</a></li>
+            <li><a href="mailto:rskaldin@exadel.com" class="text-white">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <div class="m2 img" data-sly-resource="${ '.' @ resourceType = 'core/wcm/components/image/v2/image' }"></div>
+        <strong class="text-warning mx-3">${header.name}</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+              aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
