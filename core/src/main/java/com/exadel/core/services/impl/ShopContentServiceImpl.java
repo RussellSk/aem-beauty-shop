@@ -11,13 +11,13 @@ import org.osgi.service.component.annotations.Reference;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Slf4j
 @Component(service = ShopContentService.class)
 public class ShopContentServiceImpl implements ShopContentService {
 
     private static final String PAGE_PATH = "/content/exadel/us/en/products";
-    private static final String PRODUCT_TITLE_COMPONENT = "exadel/components/title";
 
     @Reference
     private ResourceResolverFactory resolverFactory;
@@ -65,15 +65,15 @@ public class ShopContentServiceImpl implements ShopContentService {
             Map<String, Object> productProperties = new HashMap<>();
             productProperties.put("jcr:primaryType", "nt:unstructured");
             productProperties.put("sling:resourceType", "exadel/components/content/product");
-            productProperties.put("name", product.getName());
-            productProperties.put("description", product.getDescription());
-            productProperties.put("brand", product.getBrand());
-            productProperties.put("image", product.getImage_link());
-            productProperties.put("price", product.getPrice());
-            productProperties.put("type", product.getProduct_type());
-            productProperties.put("rating", product.getRating());
-            productProperties.put("created_at", product.getCreated_at());
-            productProperties.put("category", product.getCategory());
+            productProperties.put("name", Optional.ofNullable(product.getName()).orElse("Unknown"));
+            productProperties.put("description", Optional.ofNullable(product.getDescription()).orElse(""));
+            productProperties.put("brand", Optional.ofNullable(product.getBrand()).orElse("Various"));
+            productProperties.put("image", Optional.ofNullable(product.getImage_link()).orElse(""));
+            productProperties.put("price", Optional.ofNullable(product.getPrice()).orElse(""));
+            productProperties.put("type", Optional.ofNullable(product.getProduct_type()).orElse("Various"));
+            productProperties.put("rating", Optional.of(product.getRating()).orElse(0.0));
+            productProperties.put("createdAt", Optional.of(product.getCreated_at()).orElse(""));
+            productProperties.put("category", Optional.ofNullable(product.getCategory()).orElse("Various"));
             resourceResolver.create(containerResource, "product", productProperties);
 
             resourceResolver.commit();

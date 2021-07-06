@@ -3,6 +3,7 @@ package com.exadel.core.services.impl;
 import com.exadel.core.services.ShopContentService;
 import com.exadel.core.services.ShopUpdateService;
 import com.exadel.core.services.data.Product;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -65,8 +66,6 @@ public class ShopUpdateServiceImpl implements ShopUpdateService {
                 for (Product product : products) {
                     log.info("-- PRODUCT: " + product.getName());
                     contentService.createNewProduct(product);
-                    if (count > 2) break;
-                    count++;
                 }
             }
         } catch (Exception exception) {

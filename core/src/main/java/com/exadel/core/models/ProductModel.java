@@ -33,6 +33,20 @@ public class ProductModel {
     private String brand;
 
     @ValueMapValue
+    @Default(values = "Default Type")
+    private String type;
+
+    @ValueMapValue
+    @Default(doubleValues = 0.0)
+    private double rating;
+
+    @ValueMapValue
+    private String createdAt;
+
+    @ValueMapValue
+    private String category;
+
+    @ValueMapValue
     @Default(values = "Default Price")
     private String price;
 
@@ -78,6 +92,22 @@ public class ProductModel {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getCategory() {
+        return category;
     }
 
     public String getPagePath() {
