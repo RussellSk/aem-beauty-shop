@@ -1,5 +1,7 @@
 package com.exadel.core.services.impl;
 
+import com.day.cq.tagging.InvalidTagFormatException;
+import com.day.cq.tagging.TagManager;
 import com.exadel.core.services.ShopContentService;
 import com.exadel.core.services.data.Product;
 import com.exadel.core.utils.ResourceResolverUtil;
@@ -18,10 +20,14 @@ import java.util.Optional;
 public class ShopContentServiceImpl implements ShopContentService {
 
     private static final String PAGE_PATH = "/content/exadel/us/en/products";
+    private static final String TAG_PATH = "/content/cq:tags/exadel/brands/";
 
     @Reference
     private ResourceResolverFactory resolverFactory;
 
+    /**
+     * Creates new product page with product component and corresponding attributes
+     */
     @Override
     public void createNewProduct(Product product) {
         try (ResourceResolver resourceResolver = ResourceResolverUtil.getResourceResolver(resolverFactory)) {
@@ -82,4 +88,23 @@ public class ShopContentServiceImpl implements ShopContentService {
             log.error(String.format("ShopContentServiceImpl: %s", e.getMessage()));
         }
     }
+
+    /**
+     * Creates new tags in namespace brand
+     */
+    @Override
+    public void createNewTag(String name) {
+        try (ResourceResolver resourceResolver = ResourceResolverUtil.getResourceResolver(resolverFactory)) {
+            TagManager tagManager = resourceResolver.adaptTo(TagManager.class);
+            if (tagManager.resolve(TAG_PATH + name) == null) {
+                tagManager.createTag(TAG_PATH + name, name, "Product Brand Tag", true);
+            }
+        } catch (LoginException e) {
+            log.error(String.format("createNewTag: %s", e.getMessage()));
+        } catch (InvalidTagFormatException e) {
+            log.error(String.format("createNewTag - tagManager: %s", e.getMessage()));
+        }
+    }
+
+
 }

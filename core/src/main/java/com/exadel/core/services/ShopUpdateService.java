@@ -1,7 +1,8 @@
 package com.exadel.core.services;
 
+import java.util.Set;
+
 public interface ShopUpdateService {
     void updateProducts(String productType);
-    void updateTags();
-    void updateBrands();
+    Set<String> updateBrands();
 }
