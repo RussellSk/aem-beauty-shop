@@ -100,3 +100,6 @@ coverage/
 
 # Ignore AEM repo configuration file
 .repo
+
+# Ignore ui.frontend folder
+ui.frontend/
