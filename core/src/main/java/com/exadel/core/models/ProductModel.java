@@ -1,5 +1,8 @@
 package com.exadel.core.models;
 
+import com.day.cq.dam.api.Asset;
+import com.day.cq.tagging.Tag;
+import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.commons.lang3.StringUtils;
@@ -9,10 +12,12 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.PostConstruct;
+import java.util.Iterator;
 import java.util.Optional;
 
 @Model(
@@ -64,7 +69,21 @@ public class ProductModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
+    /**
+     * Injecting Sling Servlet Request
+     */
+    @Self
+    private SlingHttpServletRequest request;
+
+    /**
+     * Page URL with .html type
+     */
     private String pagePath;
+
+    /**
+     * Page's tags
+     */
+    private Tag[] tags;
 
     @PostConstruct
     protected void init() {
@@ -72,6 +91,7 @@ public class ProductModel {
         pagePath = Optional.ofNullable(pageManager)
                 .map(pm -> pm.getContainingPage(currentResource))
                 .map(p -> p.getPath() + ".html").orElse("");
+        tags = pageManager.getContainingPage(currentResource).getTags();
     }
 
     public String getName() {
@@ -112,6 +132,10 @@ public class ProductModel {
 
     public String getPagePath() {
         return pagePath;
+    }
+
+    public Tag[] getTags() {
+        return tags;
     }
 
     /**

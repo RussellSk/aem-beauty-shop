@@ -105,6 +105,4 @@ public class ShopContentServiceImpl implements ShopContentService {
             log.error(String.format("createNewTag - tagManager: %s", e.getMessage()));
         }
     }
-
-
 }

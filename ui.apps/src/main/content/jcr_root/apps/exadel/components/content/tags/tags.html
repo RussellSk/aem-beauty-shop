@@ -1,0 +1,18 @@
+<div data-sly-use.tagList="com.exadel.core.models.TagsModel"
+        class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-secondary my-3 shadow" >
+                <div class="card-body text-primary">
+                    <ul class="list-inline">
+                        <div data-sly-list.item="${tagList.tags}">
+                            <li class="list-inline-item m-1">
+                                <a href="" class=""><span class="badge bg-light text-dark border shadow">${item}</span></a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
