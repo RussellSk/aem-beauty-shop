@@ -39,6 +39,7 @@ public class ShopContentServiceImpl implements ShopContentService {
             Resource rootResource = createRootNode(resourceResolver, contentResource);
             Resource containerResource = createContainerNode(resourceResolver, rootResource);
             createProduct(resourceResolver, containerResource, product);
+            createLikes(resourceResolver, containerResource, product);
 
             resourceResolver.commit();
 
@@ -164,6 +165,26 @@ public class ShopContentServiceImpl implements ShopContentService {
         } catch (PersistenceException exception) {
             log.error("createProduct",  exception);
         }
+    }
+
+    /**
+     * Creates Like node
+     * @param resourceResolver Resource Resolver
+     * @param containerResource Container Resource
+     * @param product Product Information
+     */
+    private void createLikes(ResourceResolver resourceResolver, Resource containerResource, Product product) {
+        try {
+            Map<String, Object> likesProperties = new HashMap<>();
+            likesProperties.put("jcr:primaryType", "nt:unstructured");
+            likesProperties.put("sling:resourceType", "exadel/components/content/likes");
+            likesProperties.put("productId", product.getId());
+
+            resourceResolver.create(containerResource, "likes", likesProperties);
+        } catch (PersistenceException exception) {
+            log.error("createLikes", exception);
+        }
+
     }
 
     /**

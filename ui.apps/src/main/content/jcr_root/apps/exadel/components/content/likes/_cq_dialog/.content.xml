@@ -12,7 +12,8 @@
                 <items jcr:primaryType="nt:unstructured">
                     <button
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/button"                            name="./myButton"
+                            sling:resourceType="granite/ui/components/foundation/button"
+                            name="./myButton"
                             text="Submit">
                     </button>
                 </items>
