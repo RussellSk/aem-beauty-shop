@@ -79,7 +79,7 @@ public class ShopUpdateServiceImpl implements ShopUpdateService {
                 }
             }
         } catch (Exception exception) {
-            log.error(String.format("updateProduct: %s", exception.getMessage()));
+            log.error("updateProduct", exception);
         }
     }
 
@@ -102,7 +102,7 @@ public class ShopUpdateServiceImpl implements ShopUpdateService {
             }
 
         } catch (IOException exception) {
-            log.error(String.format("updateBrands: %s", exception.getMessage()));
+            log.error("updateBrands", exception);
         }
 
         return brands;

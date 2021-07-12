@@ -44,7 +44,9 @@ public class TagsModel {
         Iterator<Tag> brandTag = brandNamespace.listChildren();
         int tagsCount = 0;
         while (brandTag.hasNext()) {
-            if (tagsCount++ >= getAmount()) break;
+            if (tagsCount++ >= getAmount()) {
+                break;
+            }
             Tag currentTag = brandTag.next();
             String tagName = currentTag.getName();
             long count = currentTag.getCount();
