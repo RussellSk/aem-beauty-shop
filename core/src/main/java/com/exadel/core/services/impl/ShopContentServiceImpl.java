@@ -71,6 +71,7 @@ public class ShopContentServiceImpl implements ShopContentService {
             Map<String, Object> productProperties = new HashMap<>();
             productProperties.put("jcr:primaryType", "nt:unstructured");
             productProperties.put("sling:resourceType", "exadel/components/content/product");
+            productProperties.put("productId", product.getId());
             productProperties.put("name", Optional.ofNullable(product.getName()).orElse("Unknown"));
             productProperties.put("description", Optional.ofNullable(product.getDescription()).orElse(""));
             productProperties.put("brand", Optional.ofNullable(product.getBrand()).orElse("Various"));
@@ -81,6 +82,12 @@ public class ShopContentServiceImpl implements ShopContentService {
             productProperties.put("createdAt", Optional.of(product.getCreated_at()).orElse(""));
             productProperties.put("category", Optional.ofNullable(product.getCategory()).orElse("Various"));
             resourceResolver.create(containerResource, "product", productProperties);
+
+            Map<String, Object> likesProperties = new HashMap<>();
+            likesProperties.put("jcr:primaryType", "nt:unstructured");
+            likesProperties.put("sling:resourceType", "exadel/components/content/likes");
+            likesProperties.put("productId", product.getId());
+            resourceResolver.create(containerResource, "likes", likesProperties);
 
             resourceResolver.commit();
 

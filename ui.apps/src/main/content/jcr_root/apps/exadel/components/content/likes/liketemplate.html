@@ -1,0 +1,11 @@
+<div data-sly-template.likesTemplate="${@ data}">
+    <div class="btn-group">
+        <input type="hidden" value="${data.productId}"/>
+        <button type="button" class="btn btn-sm btn-outline-success likeButton">
+            Like <span class="badge bg-secondary likes-count-value">${data.likes}</span>
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-danger dislikeButton">
+            Dislike <span class="badge bg-secondary dislikes-count-value">${data.dislikes}</span>
+        </button>
+    </div>
+</div>

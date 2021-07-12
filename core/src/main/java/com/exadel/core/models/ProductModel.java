@@ -5,6 +5,7 @@ import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.exadel.core.services.LikesService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -17,6 +18,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import java.util.Iterator;
 import java.util.Optional;
 
@@ -28,6 +30,12 @@ public class ProductModel {
 
     private static final short DESCRIPTION_MAX_WIDTH = 200;
     private static final short NAME_MAX_WIDTH = 100;
+
+    @Inject
+    private LikesService likesService;
+
+    @ValueMapValue
+    private int productId;
 
     @ValueMapValue
     @Default(values = "Product Name")
@@ -94,6 +102,10 @@ public class ProductModel {
         tags = pageManager.getContainingPage(currentResource).getTags();
     }
 
+    public int getProductId() {
+        return productId;
+    }
+
     public String getName() {
         return name;
     }
@@ -150,5 +162,13 @@ public class ProductModel {
      */
     public String getTruncatedDescription() {
         return StringUtils.abbreviate(getDescription(), DESCRIPTION_MAX_WIDTH);
+    }
+
+    public int getLikes() {
+        return likesService.getLikesCount(String.valueOf(productId));
+    }
+
+    public int getDislikes() {
+        return likesService.getDislikesCount(String.valueOf(productId));
     }
 }

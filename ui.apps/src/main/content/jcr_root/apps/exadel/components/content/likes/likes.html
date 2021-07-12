@@ -1,4 +1,4 @@
-<div class="btn-group">
-  <button type="button" class="btn btn-sm btn-outline-success">Like</button>
-  <button type="button" class="btn btn-sm btn-outline-danger">Dislike</button>
+<div data-sly-use.item="${'com.exadel.core.models.LikesModel'}"
+     data-sly-use.liketemplate="liketemplate.html">
+    <div data-sly-call="${liketemplate.likesTemplate @ data=item}"></div>
 </div>
