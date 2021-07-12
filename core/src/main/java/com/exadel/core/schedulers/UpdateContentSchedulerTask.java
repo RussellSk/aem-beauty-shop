@@ -13,6 +13,8 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Set;
+
 
 @Designate(ocd = UpdateContentSchedulerTask.Config.class)
 @Component(service = Runnable.class)
@@ -58,13 +60,12 @@ public class UpdateContentSchedulerTask implements Runnable {
     @Override
     public void run() {
         try {
-            LOGGER.info("=== UpdateContentSchedulerTask is now running");
-            beautyShopService.updateBrands();
-            beautyShopService.updateTags();
+            LOGGER.info("UpdateContentSchedulerTask is now running");
+            Set<String> brands = beautyShopService.updateBrands();
             beautyShopService.updateProducts("maybelline");
-            LOGGER.info("=== UpdateContentSchedulerTask is finished");
-        } catch (Exception e) {
-            LOGGER.error("-- UpdateContentSchedulerTask: " + e.getMessage());
+            LOGGER.info("UpdateContentSchedulerTask is finished");
+        } catch (Exception exception) {
+            LOGGER.error("UpdateContentSchedulerTask: {}", getClass().getName(), exception);
         }
     }
 
