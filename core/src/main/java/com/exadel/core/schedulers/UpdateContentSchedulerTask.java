@@ -60,12 +60,12 @@ public class UpdateContentSchedulerTask implements Runnable {
     @Override
     public void run() {
         try {
-            LOGGER.info("=== UpdateContentSchedulerTask is now running");
+            LOGGER.info("UpdateContentSchedulerTask is now running");
             Set<String> brands = beautyShopService.updateBrands();
             beautyShopService.updateProducts("maybelline");
-            LOGGER.info("=== UpdateContentSchedulerTask is finished");
-        } catch (Exception e) {
-            LOGGER.error("-- UpdateContentSchedulerTask: " + e.getMessage());
+            LOGGER.info("UpdateContentSchedulerTask is finished");
+        } catch (Exception exception) {
+            LOGGER.error("UpdateContentSchedulerTask: {}", getClass().getName(), exception);
         }
     }
 

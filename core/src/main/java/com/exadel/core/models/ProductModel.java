@@ -90,7 +90,7 @@ public class ProductModel {
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
         pagePath = Optional.ofNullable(pageManager)
                 .map(pm -> pm.getContainingPage(currentResource))
-                .map(p -> p.getPath() + ".html").orElse("");
+                .map(p -> p.getPath() + ".html").orElse(StringUtils.EMPTY);
         tags = pageManager.getContainingPage(currentResource).getTags();
     }
 
