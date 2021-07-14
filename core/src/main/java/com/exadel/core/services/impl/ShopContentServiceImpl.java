@@ -39,6 +39,7 @@ public class ShopContentServiceImpl implements ShopContentService {
             Resource rootResource = createRootNode(resourceResolver, contentResource);
             Resource containerResource = createContainerNode(resourceResolver, rootResource);
             createProduct(resourceResolver, containerResource, product);
+            addTagToProduct(resourceResolver, contentResource, product);
             createLikes(resourceResolver, containerResource, product);
 
             resourceResolver.commit();
@@ -164,6 +165,22 @@ public class ShopContentServiceImpl implements ShopContentService {
             resourceResolver.create(containerResource, "product", productProperties);
         } catch (PersistenceException exception) {
             log.error("createProduct",  exception);
+        }
+    }
+
+    /**
+     * Add tags to page
+     * @param resourceResolver Resource Resolver
+     * @param createdProduct Container Resource
+     * @param product Product Information
+     */
+    private void addTagToProduct(ResourceResolver resourceResolver, Resource createdProduct, Product product) {
+        try {
+            TagManager tagManager = resourceResolver.adaptTo(TagManager.class);
+            TagManager.FindResults results = tagManager.findByTitle(product.getBrand());
+            tagManager.setTags(createdProduct, results.tags, true);
+        } catch (Exception exception) {
+            log.error("Exception during adding tag to product", exception);
         }
     }
 

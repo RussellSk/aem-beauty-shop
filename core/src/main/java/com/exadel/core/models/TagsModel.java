@@ -2,6 +2,7 @@ package com.exadel.core.models;
 
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
+import com.exadel.core.models.data.TagItem;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -34,7 +35,7 @@ public class TagsModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
-    private List<String> tags;
+    private List<TagItem> tags;
 
     @PostConstruct
     protected void init() {
@@ -50,11 +51,15 @@ public class TagsModel {
             Tag currentTag = brandTag.next();
             String tagName = currentTag.getName();
             long count = currentTag.getCount();
-            tags.add(String.format("%s (%d)", tagName, count));
+
+            TagItem tagItem = new TagItem();
+            tagItem.setName(tagName);
+            tagItem.setCount(count);
+            tags.add(tagItem);
         }
     }
 
-    public List<String> getTags() {
+    public List<TagItem> getTags() {
         return tags;
     }
 
