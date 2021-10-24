@@ -25,7 +25,7 @@ public class UpdateContentSchedulerTask implements Runnable {
     public static @interface Config {
 
         @AttributeDefinition(name = "Cron-job expression")
-        String scheduler_expression() default "*/30 * * * * ?";
+        String scheduler_expression() default "* * */1 * * ?";
 
         @AttributeDefinition(name = "Concurrent task",
                 description = "Whether or not to schedule this task concurrently")
@@ -62,7 +62,9 @@ public class UpdateContentSchedulerTask implements Runnable {
         try {
             LOGGER.info("UpdateContentSchedulerTask is now running");
             Set<String> brands = beautyShopService.updateBrands();
-            beautyShopService.updateProducts("maybelline");
+            for (String brand : brands) {
+                beautyShopService.updateProducts(brand);
+            }
             LOGGER.info("UpdateContentSchedulerTask is finished");
         } catch (Exception exception) {
             LOGGER.error("UpdateContentSchedulerTask: {}", getClass().getName(), exception);

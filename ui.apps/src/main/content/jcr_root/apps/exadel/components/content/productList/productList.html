@@ -1,7 +1,6 @@
 <div data-sly-use.productList="com.exadel.core.models.ProductListModel"
-     data-sly-use.liketemplate="exadel/components/content/likes/liketemplate.html"
-     class="mb-5">
-    <div data-sly-list.item="${productList.products}" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+     data-sly-use.liketemplate="exadel/components/content/likes/liketemplate.html">
+    <div data-sly-list.item="${productList.products}" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-2">
         <div class="col">
             <div class="card shadow">
                 <img src="${item.image}" class="img mx-auto" width="220" />

@@ -10,12 +10,14 @@
             <column jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <button
-                            jcr:primaryType="nt:unstructured"
+                    <likeButton jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/button"
-                            name="./myButton"
-                            text="Submit">
-                    </button>
+                            name="resetLikes"
+                            text="Reset likes" />
+                    <dislikeButton jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/button"
+                            name="resetDislikes"
+                            text="Reset dislikes" />
                 </items>
             </column>
         </items>
